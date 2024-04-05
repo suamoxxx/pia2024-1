@@ -1,5 +1,5 @@
 const path = require('path');
-
+// Webpack toma  el archivo .js index  de react con notacion JSX  y lo empaqueta en el archivo .js bundle 
 module.exports = {
             entry: './app/index.js',
             output: {
