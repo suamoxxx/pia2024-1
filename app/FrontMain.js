@@ -4,6 +4,10 @@ import React, { Component, useState } from "react";
 import { render } from "react-dom";
 import '/app/app.css';
 import { Draggable, Droppable } from "react-drag-and-drop";
+import del from '../public/del.png'
+
+
+
 
 
 class TaskFront extends Component {
@@ -18,17 +22,19 @@ class TaskFront extends Component {
         this.handlechange = this.handlechange.bind(this)
     }  
         addtask (e){
-            fetch('http://localhost:3001/tareas', {
+                console.log(this.state)
+                fetch('http://localhost:3001/tareas', {
                 method: 'POST',
-                headers: { "Content-type": "application/json"},
+                headers: { "Content-type": "application/json", "Accept": "applications/json"},
                 body: JSON.stringify(this.state)
-            }).then(res => console.log(res)).catch(error=> (error))
-            console.log("almacenado")
-            this.setState({priority: '', description:""})
+            }).then(resp => console.log(resp)).catch(error=> (error))
         }
         handlechange(e){
-            console.log(e.target.value);
-                
+            const {name, value} = e.target;
+            console.log(e.target.value)
+            this.setState ({
+                [name]:value
+            })                
         }
 
     render(){ 
@@ -41,27 +47,27 @@ class TaskFront extends Component {
                             <form onSubmit={this.addtask} >
                                         <p><label>Prioridad</label></p>
                                        { /*Input de Prioridad con multiples opciones*/} 
-                                            <select id="priority" 
+
+                                            <input id="priority" 
                                                     name="priority" 
-                                                    placeholder="prioridad" 
-                                                    onChange={ this.handlechange} 
-                                                    value={this.state.priority}>
-                                                    <option>Alta</option>
-                                                    <option>Media</option>
-                                                    <option>Baja</option>
-                                            </select>
+                                                    placeholder="Alta/Media/Baja" 
+                                                    onChange={ this.handlechange} >
+                                            </input>
                                           {/*Input de area de texto   */}
                                         <textarea
                                                 onChange={  this.handlechange} 
                                                 id="description" 
                                                 name="description"
                                                 className="input_style_description" 
-                                                placeholder="Descripcion de la tarea"
-                                                value={this.state.description}>   
+                                                placeholder="Descripcion de la tarea">   
                                                 </textarea>
                                                 {/*Boton que envia los inputs*/}
                                         <button type="submit" className="btn-submit">&#43;</button> 
                         </form>
+                    </div>
+
+                    <div>
+                        <button><img src=""/></button>
                     </div>
             </div>
         )
