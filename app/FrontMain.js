@@ -3,13 +3,8 @@ import React, { Component, useState } from "react";
 //desttructuramos del paquete react-dom el metodo render
 import { render } from "react-dom";
 import '/app/app.css';
-import { Draggable, Droppable } from "react-drag-and-drop";
-import del from '../public/del.png'
-
-
-
-
-
+import { DndContext,clousestCorners } from "@dnd-kit/core";
+import del from '../public/del.png';
 class TaskFront extends Component {
     constructor (){
         super();
@@ -20,6 +15,7 @@ class TaskFront extends Component {
         //Captura cada metodo
         this.addtask = this.addtask.bind(this);
         this.handlechange = this.handlechange.bind(this)
+        this.handlePriority = this.handlePriority.bind(this)
     }  
         addtask (e){
                 console.log(this.state)
@@ -37,12 +33,20 @@ class TaskFront extends Component {
             })                
         }
 
+        handlePriority(e){
+            const {name, value} = e.target;
+            console.log(e.target.value)
+            this.setState ({
+                [name]:value
+            })                
+        }
     render(){ 
         return (
            <div className="container">
                     <nav className="nav">
                           <div></div>
                     </nav>
+                    <DndContext >
                     <div>
                             <form onSubmit={this.addtask} >
                                         <p><label>Prioridad</label></p>
@@ -51,7 +55,7 @@ class TaskFront extends Component {
                                             <input id="priority" 
                                                     name="priority" 
                                                     placeholder="Alta/Media/Baja" 
-                                                    onChange={ this.handlechange} >
+                                                    onChange={ this.handlePriority} >
                                             </input>
                                           {/*Input de area de texto   */}
                                         <textarea
@@ -65,13 +69,9 @@ class TaskFront extends Component {
                                         <button type="submit" className="btn-submit">&#43;</button> 
                         </form>
                     </div>
-
-                    <div>
-                        <button><img src=""/></button>
-                    </div>
+                    </DndContext>
             </div>
         )
     }
 };
-
 export default TaskFront;
