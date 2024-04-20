@@ -22,10 +22,12 @@ module.exports = {
                         {
                             test: /\.css$/, 
                             use:  ['style-loader','css-loader']
-                            }, {
-                                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-                                loader: require.resolve(‘url-loader’)
-                            }
+                         },        
+                         {
+                            test: /\.(png|jpe?g|gif)$/i,
+                            use: [{loader: 'file-loader'}]
+                         }
+
                         
                    ]
             }

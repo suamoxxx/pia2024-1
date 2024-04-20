@@ -1,77 +1,44 @@
-//desestructuramos del paquete react-dom el metodo render
 import React, { Component, useState } from "react";
-//desttructuramos del paquete react-dom el metodo render
-import { render } from "react-dom";
 import '/app/app.css';
+import Btndel  from './components/del.js';
+import Btnadd  from './components/add.js';
+import Nav  from './components/nav.js';
+import Charts  from './components/draw.js';
 import { DndContext,clousestCorners } from "@dnd-kit/core";
-import del from '../public/del.png';
-class TaskFront extends Component {
-    constructor (){
-        super();
-        this.state = {
-            priority: "", 
-            description: ""
-        };   
-        //Captura cada metodo
-        this.addtask = this.addtask.bind(this);
-        this.handlechange = this.handlechange.bind(this)
-        this.handlePriority = this.handlePriority.bind(this)
-    }  
-        addtask (e){
-                console.log(this.state)
-                fetch('http://localhost:3001/tareas', {
-                method: 'POST',
-                headers: { "Content-type": "application/json", "Accept": "applications/json"},
-                body: JSON.stringify(this.state)
-            }).then(resp => console.log(resp)).catch(error=> (error))
-        }
-        handlechange(e){
-            const {name, value} = e.target;
-            console.log(e.target.value)
-            this.setState ({
-                [name]:value
-            })                
-        }
 
-        handlePriority(e){
-            const {name, value} = e.target;
-            console.log(e.target.value)
-            this.setState ({
-                [name]:value
-            })                
-        }
-    render(){ 
-        return (
-           <div className="container">
-                    <nav className="nav">
-                          <div></div>
-                    </nav>
-                    <DndContext >
-                    <div>
-                            <form onSubmit={this.addtask} >
-                                        <p><label>Prioridad</label></p>
-                                       { /*Input de Prioridad con multiples opciones*/} 
 
-                                            <input id="priority" 
-                                                    name="priority" 
-                                                    placeholder="Alta/Media/Baja" 
-                                                    onChange={ this.handlePriority} >
-                                            </input>
-                                          {/*Input de area de texto   */}
-                                        <textarea
-                                                onChange={  this.handlechange} 
-                                                id="description" 
-                                                name="description"
-                                                className="input_style_description" 
-                                                placeholder="Descripcion de la tarea">   
-                                                </textarea>
-                                                {/*Boton que envia los inputs*/}
-                                        <button type="submit" className="btn-submit">&#43;</button> 
-                        </form>
-                    </div>
-                    </DndContext>
+
+function FrontMain(){
+    return (
+        <div>
+                <div>
+                    <Nav />
+                </div>
+            <div id="mn">
+            <div id="zntsk">
+                            <div>
+                                <h1>tareas</h1>
+                                <Btndel />
+                            </div>
+                            <div>
+                            <Btnadd />
+                            </div>
+                </div>
+
+                <div id="znte">
+                            <div>
+                                <h2>notas</h2>
+
+                            </div>
+                            <div>
+          
+                            </div>
+                </div>
+                <div id="znch">
+                        <Charts />
+                </div>
             </div>
-        )
-    }
-};
-export default TaskFront;
+        </div>
+    );
+}
+export default FrontMain;

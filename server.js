@@ -17,14 +17,12 @@ app.use(morgan('dev'));
 app.use(express.json());
 //Archivo estatico
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use((req, res, next) => {
         res.header('Access-Control-Allow-Origin', '*'); // Replace with your frontend origin
         res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Optional, adjust allowed headers
         res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Optional, adjust allowed methods
         next();
       });
-/////////////////////Metodos HTTP////////////////////////////
 //Api rest de tareas
 app.get('/tareas', async(requ, resp)=> {
          const task = await Task.find();
@@ -64,8 +62,6 @@ app.get('/notas', async(requ, resp)=> {
         const note = await Note.find();
         resp.json(note);
 });
-
-
  //Imprime estado del servidor, obteniedo el valor con get
 app.listen(app.get('port'), ()=>{
          console.log(`Server running in port ${app.get('port')}`);
