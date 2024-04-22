@@ -30,7 +30,7 @@ app.get('/tareas', async(requ, resp)=> {
 });
 app.post('/tareas', async (resq,resp)=>{
         const {descriptions,priority} = resq.body;
-        const taskAddDB = new Task ({descriptions,priority})
+        const taskAddDB = new Task ({priority, descriptions})
         console.log(resq.body);
         await taskAddDB.save();
         resp.json('Almacenado en la DB tareas');
