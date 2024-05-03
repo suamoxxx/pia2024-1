@@ -5,7 +5,7 @@ import '/app/app.css';
             <div>
                 <div>
                     <form>
-                       <button class="btn_nts">&#43;</button>
+                       <button className="btn_nts">&#43;</button>
                         <textarea 
                                    id="description" 
                                     name="description"

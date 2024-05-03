@@ -2,8 +2,6 @@ import React from "react";
 import '/app/app.css';
 import Chart from "chart.js/auto";
 import { Pie } from "react-chartjs-2";
-
-const labels = ["January", "February"];
 const data = {
     labels: [
         'Incompletas',
@@ -12,10 +10,9 @@ const data = {
     datasets: [
         {
         label: "Estados de las tareas",
-        borderColor: "rgb(230 ,230, 255)",
-        data: [ 10, 5],
+        data: [ 50, 50],
         backgroundColor: [
-            'rgb(255, 99, 132)',
+            'rgb(217, 94, 57)',
             'rgb(82, 183, 136)'
           ]
         }

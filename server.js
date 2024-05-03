@@ -29,8 +29,8 @@ app.get('/tareas', async(requ, resp)=> {
          resp.json(task);
 });
 app.post('/tareas', async (resq,resp)=>{
-        const {descriptions,priority} = resq.body;
-        const taskAddDB = new Task ({priority, descriptions})
+        const {priority, description} = resq.body;
+        const taskAddDB = new Task ({priority, description})
         console.log(resq.body);
         await taskAddDB.save();
         resp.json('Almacenado en la DB tareas');
@@ -40,8 +40,8 @@ app.get('tareas/:id', async (resq, resp)=>{
          resp.json(taskSearch);
 });
 app.put('tareas/:id', async (resq,resp)=> {
-          const { taskId,descriptions,dueDate,priority } = resq.body;
-          const taskUpdDB = { taskId,descriptions,dueDate,priority}
+          const { taskId,description,dueDate,priority } = resq.body;
+          const taskUpdDB = { taskId,description,dueDate,priority}
           await Task.findByIdAndUpdate(resq.params.id, taskUpdDB);
          console.log(resq.params.id)
          resp.json("Actualizada ");
@@ -52,8 +52,8 @@ app.delete('tareas/:id', async (resq,resp)=> {
 });
 //Api rest de notas
 app.post('/notas', async (resq,resp)=>{
-        const {noteId,descriptions} = resq.body;
-        const noteAddDB = new Note ({noteId,descriptions})
+        const {noteId,description} = resq.body;
+        const noteAddDB = new Note ({noteId,description})
         console.log(resq.body);
         await noteAddDB.save();
         resp.json('Almacenado en la DB de notas');

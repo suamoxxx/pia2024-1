@@ -5,6 +5,6 @@ const { Schema } = mongo;
 const taskSchema = new Schema ({
     priority: {type: String, requerired: true },
     description:{type: String, requerired: true }
-}, { timestamps: true });
+},{ timestamps: true });
 //Exportamos el esquema
 module.exports = mongo.model('Task', taskSchema);
