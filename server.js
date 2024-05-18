@@ -1,8 +1,6 @@
 //Importamos paquetes y demas modulos  ECMAScript 2015 o ES6
 const express = require('express');
 const morgan = require('morgan');
-//Importamos el admin de las tareas
-const TaskManager = require('./TaskManager.js');
 const app = express();
 const path = require('path');
 //Importamos la conexion a la DB

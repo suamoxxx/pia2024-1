@@ -4,7 +4,7 @@ import del from "../images/del.png";
     function Btndel (){
         return (
             <div>
-                <button><img  id="del" src={del} /></button>
+                <button className="bt-main"><img  id="del" src={del} /></button>
             </div>
         );
     }

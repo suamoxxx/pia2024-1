@@ -6,46 +6,58 @@ import Nav  from './components/nav.js';
 import Charts  from './components/draw.js';
 import BtnaddTsk  from './components/add _nts.js';
 import BtndelNts from './components/del_nts.js';
+import elf from "./images/elf.png";
+import clip from "./images/clip.png"
+import ChartsNote from "./components/drawnote.js";
 function FrontMain(){
     return (
-        <div>
-                <div>
-                    {/*Renderizamos el componente nav */}
-                    <Nav />
-                </div>
-            <div id="mn">
-            <h1 className="text-main">Bahamuth</h1>
-            <div id="zntsk">
-                            <div>
-                                {/*Renderizamos el componente importado boton para agregar tarea*/}
-                                <Btnadd />
-                            </div>
-                            <div>
-                                {/*Renderizamos el componente importado boton para eliminar tareas*/}
-                            <Btndel />
-                            </div>
-                </div>
+        <div >
+                    <div className="main">
+                                <div>
+                                    {/*Renderizamos el componente nav */}
+                                    <Nav />
+                                </div>
 
-                <div id="znte">
-                            <div>
-                                {/*Renderizamos el componente importado boton para agregar notas*/}
-                                <BtnaddTsk />    
+                            <div id="zntsk">
+                            <img id="clip" src={clip}/>  
+                                            <div>
+                                                {/*Renderizamos el componente importado boton para agregar tarea*/}
+                                                <Btnadd />
+                                            </div>
+
+                                            <div>
+                                                {/*Renderizamos el componente importado boton para eliminar tareas*/}
+                                             <Btndel />
+                                            </div>
+
+                                            <div id="znchtask">
+                                               <Charts />
+                                           </div>
+
+                                </div>
+
+                                <div id="znte">
+                                <img id="clip2" src={clip}/>  
+                                            <div>
+                                                {/*Renderizamos el componente importado boton para agregar notas*/}
+                                                <BtnaddTsk />    
+                                            </div>
+                                            <div>
+                                                {/*Renderizamos el componente importado boton para eliminar notas */}
+                                              <BtndelNts />
+                                            </div>
+                                            <div id="znchnts">
+                                               <ChartsNote />
+                                           </div>
+                                </div>
                             </div>
-                            <div>
-                                 {/*Renderizamos el componente importado boton para eliminar notas */}
-                            <BtndelNts />
-                            </div>
-                </div>
-                <div id="znch">
-                        <Charts />
-                </div>
-            </div>
-            {/*Renderizamos el componente pie de pagina*/}
-            <footer>
-                <div>
-                    <h2>footer</h2>
-                </div>
-            </footer>
+                            <div id="curva-pie"></div>
+                            {/*Renderizamos el componente pie de pagina*/}
+                            <footer>
+                                <div>
+                                <img id="elf3" src={elf}/>
+                                </div>
+                            </footer>
         </div>
     );
 }
