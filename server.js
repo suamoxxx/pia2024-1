@@ -44,8 +44,9 @@ app.put('tareas/:id', async (resq,resp)=> {
          console.log(resq.params.id)
          resp.json("Actualizada ");
 });
-app.delete('tareas/:id', async (resq,resp)=> {
-        await Task.findByIdAndDelete(resq.params.id)
+app.delete('tareas/:id', async (req,resp)=> {
+        console.log(req.params.id)
+        await Task.findByIdAndRemove(req.params.id)
         resp.json('Eliminado');
 });
 //Api rest de notas

@@ -1,3 +1,4 @@
+//Componente principal de bahamuth, se importan los demas compontentes como footer y nav
 import React, { Component, useState } from "react";
 import '/app/app.css';
 import Btndel  from './components/del.js';
@@ -9,6 +10,7 @@ import BtndelNts from './components/del_nts.js';
 import elf from "./images/elf.png";
 import clip from "./images/clip.png"
 import ChartsNote from "./components/drawnote.js";
+
 function FrontMain(){
     return (
         <div >
@@ -24,24 +26,13 @@ function FrontMain(){
                                                 {/*Renderizamos el componente importado boton para agregar tarea*/}
                                                 <Btnadd />
                                             </div>
-
-                                            <div>
-                                                {/*Renderizamos el componente importado boton para eliminar tareas*/}
-                                             <Btndel />
-                                            </div>
-
                                             <div id="znchtask">
                                                <Charts />
                                            </div>
-
                                 </div>
 
                                 <div id="znte">
                                 <img id="clip2" src={clip}/>  
-                                            <div>
-                                                {/*Renderizamos el componente importado boton para agregar notas*/}
-                                                <BtnaddTsk />    
-                                            </div>
                                             <div>
                                                 {/*Renderizamos el componente importado boton para eliminar notas */}
                                               <BtndelNts />
@@ -51,6 +42,7 @@ function FrontMain(){
                                            </div>
                                 </div>
                             </div>
+                            
                             <div id="curva-pie"></div>
                             {/*Renderizamos el componente pie de pagina*/}
                             <footer>

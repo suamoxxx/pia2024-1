@@ -3,12 +3,11 @@ import React, {useState, useEffect} from "react";
 import '/app/app.css';
 //Importamos el modulo notie para las alertas de las notas
 import notie from 'notie'
-//Importamos el modelo de datos de las tareas
-import task from "../../models/task";
 //Importamos el modulo arrastrar y soltar de react
-import { DndContext,closestCenter,clousestCorners } from "@dnd-kit/core";
 import {SortableContext, verticalListSortingStrategy} from '@dnd-kit/sortable'
 import Task from './Task'
+import notas from "../images/notas.png"
+var M = require('materialize-css');
 //Boton que envia a Mongoose la data de los input de React
     function Btnadd(){
         //Estado de los inputs 
@@ -21,7 +20,8 @@ import Task from './Task'
             fetch('http://127.0.0.1:3001/tareas')
             .then(res =>res.json())
             .then(data => {
-                console.log(data)
+// Establecemos valor a nuestro useState
+                 console.log(data)   
                 setData(data)
             })
         }, [])
@@ -39,10 +39,12 @@ import Task from './Task'
                 method: 'POST',
                 headers: { "Content-type": "application/json", "Accept": "applications/json"},
                 body: JSON.stringify(task)
-            })
-            //Limpiamos los datos de los inputs de prioridad y description
-            setDescriptions('');
-            setPriority('');
+            }).then(res => res.json()).then(data =>{
+                setDescriptions('');
+                setPriority('');
+             })
+            M.toast({html: 'saved'})
+            alertNote()
         }
         //Alerta de guardado en la DB
             const alertNote = ()=>{ 
@@ -53,11 +55,11 @@ import Task from './Task'
                 });
           }
         return (
-            <div>            
-                <div>                    
+            <div >            
+                <div className="linea">                    
+                <img className="img-tks" src={notas}/>  
                     {/*Formulario de tareas */}
                     <form onSubmit={handleSubmit}>
-                    <button id="bt-main">&#43;</button>
                     {/* Input de prioridad*/}
                             <input 
                                 id="priority" 
@@ -73,37 +75,24 @@ import Task from './Task'
                                     name="description"
                                     className="input_style_description"
                                     value={description} 
-                                    placeholder="Descripcion de la tarea"
+                                    placeholder="Descripción de la tarea"
                                     onChange={(e) => setDescriptions(e.target.value)}
                                     required >   
                          </textarea>
+                         <button id="bt-main">&#43;</button>
                  </form>
                 </div>
-                <DndContext collisionDetection={closestCenter}>
+
                 <div className="table">
-                        <table>
-                            <thead>
-                                <div>
-                                <tr>
-                                    <th>Prioridad</th>
-                                    <th>Descripción</th>
-                                </tr>
-                                </div>
-                            </thead>
-                            <tbody>
-                                  <SortableContext items={data}
-                                  strategy={verticalListSortingStrategy}>
+                                    <h1 className="tareastxt">Tareas</h1>
                                             {
                                    data.map(tsk =>{                         
                                     return(
-                                      <Task task={tsk} key={data._id }/>
+                                      <Task task={tsk} key={tsk._id }/>
                                     )})
                                    }
-                                  </SortableContext>
-                            </tbody>
-                        </table>
                 </div>
-                </DndContext>
+
             </div>
         );
     }

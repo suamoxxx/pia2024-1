@@ -22,7 +22,7 @@ function Charts (){
         return (
             <div>
                 <div>
-                    <h1>Resumen de tareas</h1>
+                    <h1 id="txt-note">Resumen de tareas</h1>
                     <Pie data={data} />
                 </div>
             </div>

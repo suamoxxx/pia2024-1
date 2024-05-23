@@ -34,6 +34,7 @@
         background-color: whitesmoke;
         border: 1px solid salmon;
         animation: btnMove 0.8s linear infinite;
+        color: #f48563;
     }
 @keyframes btnMove {
         0% {
@@ -55,13 +56,12 @@
                 transform: translate(0);
         }
 }
-
 #del {
-    width: 20px;
+    width: 50px;
 }
 #zntsk  {
     width: 90%;
-    height: 600px;
+    height: 580px;
     background-color: #F3F5F8;
     box-shadow: -2px -3px 73px 6px rgba(0,0,0,0.67);
     border-radius: 13px;
@@ -75,8 +75,10 @@
 #znchtask{
     width: 30%;
     height: 395px;
-    background-color: #F3F5F8;
-    display: block;
+    position: relative;
+    left: 20%;
+    top: 8%;
+    margin: 5px;
 }
 #znte  {
     width: 90%;
@@ -102,14 +104,17 @@
     height: 395px;
     background-color: #F3F5F8;
 }
-
 input,textarea { 
     border: 0;
     border-bottom: 1px solid salmon;
     text-align: center;
-    margin-left: 30%;
-    margin-right: 30% ;
+    display: flex;
+    position: relative;
     background-color: #F3F5F8;
+    margin: 20px;
+    left: 60px;
+    bottom: 55px;
+    width: 220px;
 }
 input::placeholder{
     color: #f48563;
@@ -181,17 +186,18 @@ input {
 }
 .notie-container {
     text-align: center;
-    width: 90px;
+    width: 10%;
     border-radius: 8px;
     border: 3px solid salmon;
     color: salmon;
     position: relative;
-    bottom: 150px;
+    top: 500px;
+    
     text-align: center;
+    z-index: 999999;
 }
 #elf1 {
-    width: 60px;
-    
+    width: 60px;   
 }
 #elf2 {
     width: 150px;
@@ -251,6 +257,11 @@ p {
     border:1px solid #f48563;
     margin: 5px;
     border-radius: 3px;
+    font-weight: bold;
+    width: 400px;
+    height: 45px;
+    align-content: center;
+    padding: 2px;
 }
 #clip {
     width: 80px;
@@ -291,3 +302,89 @@ p {
 #app {
    overflow: hidden;
 }
+.img-tks {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 45px;
+}
+#bt-main {
+    position: relative;
+    display: flex;
+    margin: auto;
+    bottom: 50px;
+}
+.linea {
+    border: 1px solid #f48563;
+    width: 300px;
+    height: 200px;
+}
+.bt-main {
+    background-color: #F3F5F8;
+    border: 2px solid salmon;
+    display: flex;
+    height: 60px;
+    position: relative;
+    right: 30px;
+}
+.bt-main:hover {
+    background-color: #f48563;
+}
+#img-task {
+    width: 30px;
+    height: 30px;
+}
+.table {
+    font-size: 14px;
+    padding: 4px;
+    font-family: calibri;
+}
+.btn-del {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #f48563;
+    background-color: #F3F5F8;
+    border-radius: 50%;
+} 
+.btn-del:hover{
+    border: 0;
+}
+@media only screen and (max-width: 1080px) {
+#logo {
+    display: none;
+}
+#txt-nav {
+    display: none;
+}
+#elf2 {
+    position: relative;
+    left: 25px;
+}
+#znchtask {
+    position: relative;
+    top: 550px;
+    right: 400px;
+}
+#zntsk {
+    height: 1000px;
+}
+#txt-note {
+    font-size: 18px;
+}
+.main { 
+    height: 3200px;
+    z-index: 1;
+}
+#znte{
+    height: 1000px;
+}
+#znchnts{
+    position: relative;
+    top: 550px;
+    right: 355px;
+}
+#znchtask {
+    position: relative;
+    width: 80%;
+}
+  }
