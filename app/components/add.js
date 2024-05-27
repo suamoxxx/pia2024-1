@@ -4,24 +4,23 @@ import '/app/app.css';
 //Importamos el modulo notie para las alertas de las notas
 import notie from 'notie'
 //Importamos el modulo arrastrar y soltar de react
-import {SortableContext, verticalListSortingStrategy} from '@dnd-kit/sortable'
 import Task from './Task'
-import notas from "../images/notas.png"
+import notas from "../images/notas.png";
+import down from "../images/down.png";
+import up from "../images/up.png";
 var M = require('materialize-css');
 //Boton que envia a Mongoose la data de los input de React
     function Btnadd(){
         //Estado de los inputs 
         const [priority, setPriority ] = useState('');
         const [description, setDescriptions ] = useState('');
-        const [data, setData ] = useState([]);
-         
+        const [data, setData ] = useState([]);      
          //Solicita datos registrados en la DB a traves de useEffect de react y useState
         useEffect(()=>{
-            fetch('http://127.0.0.1:3001/tareas')
+            fetch('http://127.0.0.1:3001/api/task/')
             .then(res =>res.json())
             .then(data => {
-// Establecemos valor a nuestro useState
-                 console.log(data)   
+// Establecemos valor a nuestro useState 
                 setData(data)
             })
         }, [])
@@ -35,7 +34,7 @@ var M = require('materialize-css');
                 description: description
             }
             //Enviamos datos a la api rest para que los guarde
-            fetch('http://localhost:3001/tareas', {
+            fetch('http://localhost:3001/api/task', {
                 method: 'POST',
                 headers: { "Content-type": "application/json", "Accept": "applications/json"},
                 body: JSON.stringify(task)
@@ -55,9 +54,10 @@ var M = require('materialize-css');
                 });
           }
         return (
-            <div >            
+            <div >           
+                <a id="clip4" href="#nav"><img id="up" src={up}/></a>      
                 <div className="linea">                    
-                <img className="img-tks" src={notas}/>  
+                <img className="img-tks"  src={notas}/>  
                     {/*Formulario de tareas */}
                     <form onSubmit={handleSubmit}>
                     {/* Input de prioridad*/}
@@ -92,7 +92,7 @@ var M = require('materialize-css');
                                     )})
                                    }
                 </div>
-
+                <a  href="#clip2"><img id="down" src={down}/></a>                                          
             </div>
         );
     }

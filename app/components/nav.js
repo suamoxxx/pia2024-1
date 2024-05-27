@@ -6,7 +6,7 @@ import logo from "../images/logo.png";
     function Nav(){        
         return (
             <div>
-               <nav className="nav">
+               <nav className="nav" id="nav">
                     <div >
                        <img id="elf" src={elf}/>
                      </div>     

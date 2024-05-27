@@ -1,11 +1,10 @@
 //Componente principal de bahamuth, se importan los demas compontentes como footer y nav
 import React, { Component, useState } from "react";
 import '/app/app.css';
-import Btndel  from './components/del.js';
 import Btnadd  from './components/add.js';
 import Nav  from './components/nav.js';
 import Charts  from './components/draw.js';
-import BtnaddTsk  from './components/add _nts.js';
+import Addnts  from './components/Addnts.js';
 import BtndelNts from './components/del_nts.js';
 import elf from "./images/elf.png";
 import clip from "./images/clip.png"
@@ -35,7 +34,7 @@ function FrontMain(){
                                 <img id="clip2" src={clip}/>  
                                             <div>
                                                 {/*Renderizamos el componente importado boton para eliminar notas */}
-                                              <BtndelNts />
+                                                <Addnts />
                                             </div>
                                             <div id="znchnts">
                                                <ChartsNote />
@@ -43,11 +42,12 @@ function FrontMain(){
                                 </div>
                             </div>
                             
-                            <div id="curva-pie"></div>
+                            
                             {/*Renderizamos el componente pie de pagina*/}
                             <footer>
+                            <div id="curva-pie"><img id="elf3" src={elf}/></div>
                                 <div>
-                                <img id="elf3" src={elf}/>
+                                
                                 </div>
                             </footer>
         </div>

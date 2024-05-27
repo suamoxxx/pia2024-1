@@ -31,7 +31,7 @@
         align-items: center;
     }
     button:hover {
-        background-color: whitesmoke;
+        background-color: #CFD8DC;
         border: 1px solid salmon;
         animation: btnMove 0.8s linear infinite;
         color: #f48563;
@@ -103,6 +103,8 @@
     width: 350px;
     height: 395px;
     background-color: #F3F5F8;
+    position: relative;
+    left: 40%;
 }
 input,textarea { 
     border: 0;
@@ -210,7 +212,10 @@ input {
 #elf3 {
     width: 100px;
     height: 90px;  
-    align-items: center;
+    position: relative;
+    margin-left: 45%;
+    margin-right: 50%;
+    top: 60%;
 }
 #mn-p {
     display: flex;
@@ -251,7 +256,8 @@ p {
     margin-right: 20px;
 }
 .main { 
-    height: 2400px;
+    height: 2600px;
+    background-color: #CFD8DC;
 }
 #taskUI {
     border:1px solid #f48563;
@@ -293,9 +299,10 @@ p {
 }
 #curva-pie {
     height: 68px;
-    width: 100%;
+    width: 1500px;
     background-color: #f48563;
     position: relative;
+    bottom: 80%;
     clip-path: path('M0,64L40,42.7C80,21,160,1,240,24C320,47,400,55,480,39.3C560 ,31,640,19,720,10.7C800,3,880,15,960,29.3C1040,47,1120,57,1200,36C1280,15,1360,21,1400,34.7L1440,64L1440,192L1400,192C1360,192,1280,192,1200,192C1120,192,1040,192,960,192C880,192,800,192,720,192C640,192,560,192,480,192C400,192,320,192,240,192C160,192,80,192,40,192L0,192ZM0,64');
     transform: scaleX(-1);
 }
@@ -331,8 +338,8 @@ p {
     background-color: #f48563;
 }
 #img-task {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 .table {
     font-size: 14px;
@@ -342,13 +349,50 @@ p {
 .btn-del {
     width: 38px;
     height: 38px;
-    border: 1px solid #f48563;
-    background-color: #F3F5F8;
-    border-radius: 50%;
-} 
-.btn-del:hover{
+}
+.btn-del:hover {
     border: 0;
 }
+.btn-edit {
+    width: 38px;
+
+    height: 38px;
+} 
+#up {
+    width: 10%;
+    height: 10%;
+    position: relative;
+    right: 15%;
+    animation: delisiocin 0.8s linear infinite;
+}
+#down {
+    width: 10%;
+    height: 10%;
+    position: relative;
+    left: 1150px;
+    bottom: 15px;
+    animation: delisiocin 0.8s linear infinite;
+}
+@keyframes delisiocin {
+    0% {
+              transform: translate(0);
+    }
+    20% {
+              transform: translate(-2px, 2px);
+    }
+    40% {
+              transform: translate(-2px, -2px);
+    }
+    60% {
+              transform: translate(2px, 2px);
+    }
+    80% {
+              transform: translate(2px, -2px);
+    }
+    100% {
+              transform: translate(0);
+    }
+  }
 @media only screen and (max-width: 1080px) {
 #logo {
     display: none;
@@ -387,4 +431,4 @@ p {
     position: relative;
     width: 80%;
 }
-  }
+}
