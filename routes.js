@@ -8,11 +8,11 @@ router.get('/', async (req, res) => {
     const task = await Task.find();
      res.json(task);
 })
-router.post('/', async (resq,resp)=>{
-    const {priority, description} = resq.body;
+router.post('/', async (req,res)=>{
+    const {priority, description} = req.body;
     const taskAddDB = new Task ({priority, description})
     await taskAddDB.save();
-    resp.json('Almacenado en la DB tareas');
+    res.json('Almacenado en la DB tareas');
 });
 router.put('/:id', async (req,res)=> {
       const { description,priority } = req.body;
@@ -25,22 +25,23 @@ router.delete('/:id', async (req,res)=> {
     await Task.findByIdAndDelete(req.params.id)
     res.json({status: 'Eliminado de la DB de notas'});
 });
-router.get('task/:id', async (resq, resp)=>{
-    const taskSearch =  await Task.findById(resq.params.id);
-    resp.json(taskSearch);
+router.get('/search/:id', async (req, res)=>{
+    const taskSearch =  await Task.findById(req.params.id);
+    res.json(taskSearch);
 });
 //Api rest de notas
 router.get('/notas', async(req, res)=> {
     const note = await Note.find();
-    console.log(note)
     res.json(note);
 });
-router.post('/notas', async (resq,resp)=>{
-    const {noteId,description} = resq.body;
+router.post('/notas', async (req,res)=>{
+    const {noteId,description} = req.body;
     const noteAddDB = new Note ({noteId,description})
-    console.log(resq.body);
     await noteAddDB.save();
-    resp.json({status: 'Almacenado en la DB de notas'});
+    res.json({status: 'Almacenado en la DB de notas'});
 });
-
+router.delete('/notas/:id', async (req,res)=> {
+    await Note.findByIdAndDelete(req.params.id)
+    res.json({status: 'Eliminado de la DB de notas'});
+});
 module.exports = router;

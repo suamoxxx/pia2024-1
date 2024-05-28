@@ -1,10 +1,22 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import '/app/app.css';
 import del from '../images/del.png';
 import editar from '../images/editar.png';
+import add from './add'
 
-function Task({task, id}) {
-
+function Task({task}) {
+    const [data, setData ] = useState([]); 
+    const prioridad = add.setPriority;
+    const descrip = add.SetDescriptions;
+    const upTask = (id) => {
+            fetch(`/api/task/search/${id}/`, {})
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                priority: prioridad
+            })
+        
+    }
     const delTas = (id) => {
         if(confirm("Realmente deseas eliminarla")){
                 fetch(`http://127.0.0.1:3001/api/task/${id}` , {
@@ -14,9 +26,8 @@ function Task({task, id}) {
             .then(resp => resp.json())
             .then(data => console.log(data))
             .catch(error => console.error(error));
-        }
-        
-      
+            window.location.reload(true)
+        }      
       }
     return(
         <div  id="taskUI">
@@ -24,7 +35,7 @@ function Task({task, id}) {
                 <li>{task.priority}</li>
                 <li>{task.description}</li>
                 <li><button className="btn-del" onClick={()=> delTas(task._id)}><img id="img-task" src={del}/></button> </li>
-                <li><button className="btn-edit"><img id="img-task" src={editar}/></button></li>
+                <li><button className="btn-edit" onClick={()=>upTask(task._id)}><img id="img-task" src={editar}/></button></li>
                 </ul>
         </div>
     )

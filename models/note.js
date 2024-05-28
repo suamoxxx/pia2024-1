@@ -3,7 +3,6 @@ const  mongo = require('mongoose');
 const { Schema } = mongo;
 //Definimos el tipo de dato que se almacenara en la DB
 const noteSchema = new Schema ({
-    noteId: { type: Number, requerired: true },
     description:{type: String, requerired: true },
 }, { timestamps: true });
 //Exportamos el esquema

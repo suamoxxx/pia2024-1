@@ -1,14 +1,11 @@
 //Importamos el modulo USESTATE o el uso de estados de react, esto para controlar los datos
 import React, {useState, useEffect} from "react";
 import '/app/app.css';
-//Importamos el modulo notie para las alertas de las notas
-import notie from 'notie'
 //Importamos el modulo arrastrar y soltar de react
 import Task from './Task'
 import notas from "../images/notas.png";
 import down from "../images/down.png";
 import up from "../images/up.png";
-var M = require('materialize-css');
 //Boton que envia a Mongoose la data de los input de React
     function Btnadd(){
         //Estado de los inputs 
@@ -20,39 +17,40 @@ var M = require('materialize-css');
             fetch('http://127.0.0.1:3001/api/task/')
             .then(res =>res.json())
             .then(data => {
-// Establecemos valor a nuestro useState 
+                // Establecemos valor a nuestro useState 
                 setData(data)
             })
         }, [])
         //Evento del boton submit
        const handleSubmit =(e)=>{
-        //Detenemos el evento por defecto del navegador  
-            e.preventDefault();
-        //Pasamos los datos del estado a un objeto
-            const task = {
-                priority: priority,
-                description: description
-            }
-            //Enviamos datos a la api rest para que los guarde
-            fetch('http://localhost:3001/api/task', {
-                method: 'POST',
-                headers: { "Content-type": "application/json", "Accept": "applications/json"},
-                body: JSON.stringify(task)
-            }).then(res => res.json()).then(data =>{
-                setDescriptions('');
-                setPriority('');
-             })
-            M.toast({html: 'saved'})
-            alertNote()
+            //Detenemos el evento por defecto del navegador  
+                e.preventDefault();
+            //Pasamos los datos del estado a un objeto
+                const task = {
+                    priority: priority,
+                    description: description
+                }
+                //Enviamos datos a la api rest para que los guarde
+                fetch('http://localhost:3001/api/task', {
+                    method: 'POST',
+                    headers: { "Content-type": "application/json", "Accept": "applications/json"},
+                    body: JSON.stringify(task)
+                }).then(res => res.json()).then(data =>{
+                    setDescriptions('');
+                    setPriority('');
+                    document.getElementById("output").style.display="inline";
+                    let change = () => {
+                        return document.getElementById("output").style.display="none"
+                        
+                    }
+                    setInterval(change, 500)
+                    setInterval(window.location.reload(true),900)
+                })
+                
+            
         }
-        //Alerta de guardado en la DB
-            const alertNote = ()=>{ 
-              notie.alert(
-                { 
-                    type: 'success', 
-                    text: 'guardado', time: 2 
-                });
-          }
+        
+          
         return (
             <div >           
                 <a id="clip4" href="#nav"><img id="up" src={up}/></a>      
@@ -67,7 +65,8 @@ var M = require('materialize-css');
                                 value={priority}
                                 placeholder="Alta/Media/Baja"
                                 onChange={(e) => setPriority(e.target.value)}
-                                required  >
+                                required  
+                                autoComplete="off">
                            </input>
                            {/* Input de descripcion*/}
                            <textarea 
@@ -77,10 +76,12 @@ var M = require('materialize-css');
                                     value={description} 
                                     placeholder="Descripción de la tarea"
                                     onChange={(e) => setDescriptions(e.target.value)}
-                                    required >   
+                                    required 
+                                    autoComplete="off">   
                          </textarea>
                          <button id="bt-main">&#43;</button>
                  </form>
+                
                 </div>
 
                 <div className="table">
@@ -92,6 +93,7 @@ var M = require('materialize-css');
                                     )})
                                    }
                 </div>
+                <span id="output">SAVE</span>
                 <a  href="#clip2"><img id="down" src={down}/></a>                                          
             </div>
         );
