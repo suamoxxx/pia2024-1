@@ -9,6 +9,7 @@ import BtndelNts from './components/del_nts.js';
 import elf from "./images/elf.png";
 import clip from "./images/clip.png"
 import ChartsNote from "./components/drawnote.js";
+import logo from "./images/logo.png";
 
 function FrontMain(){
     return (
@@ -21,7 +22,8 @@ function FrontMain(){
 
                             <div id="zntsk">
                             <img id="clip" src={clip}/>  
-                                            <div>
+                                            <div className="mn-bd">
+                                                <p className="text-task">Ingresa tus tareas</p>
                                                 {/*Renderizamos el componente importado boton para agregar tarea*/}
                                                 <Btnadd />
                                             </div>
@@ -32,7 +34,7 @@ function FrontMain(){
 
                                 <div id="znte">
                                 <img id="clip2" src={clip}/>  
-                                            <div>
+                                            <div >
                                                 {/*Renderizamos el componente importado boton para eliminar notas */}
                                                 <Addnts />
                                             </div>
@@ -45,7 +47,7 @@ function FrontMain(){
                             
                             {/*Renderizamos el componente pie de pagina*/}
                             <footer>
-                            <div id="curva-pie"><img id="elf3" src={elf}/></div>
+                            <div id="curva-pie"><img id="elf3" src={logo}/></div>
                                 <div>
                                 
                                 </div>

@@ -1,14 +1,12 @@
 import React from "react";
 import '/app/app.css';
-import elf from "../images/elf.png";
-import lgtx from "../images/lgtx.png";
 import logo from "../images/logo.png";
     function Nav(){        
         return (
             <div>
                <nav className="nav" id="nav">
                     <div >
-                       <img id="elf" src={elf}/>
+                       <img id="elf" src={logo}/>
                      </div>     
                      <div className="ul-li">
                             <ul>
@@ -19,8 +17,7 @@ import logo from "../images/logo.png";
                </nav>
                 <div id="p-main">
                 <img id="logo" src={logo}/>
-                    <img id="elf2" src={lgtx}/>
-                    <p id="txt-nav">te ayuda a gestionar tus tareas de una manera sencilla. </p>
+                    <p id="txt-nav">Te ayudamos a gestionar tus tareas de una manera sencilla. </p>
                 </div>
               <div id="curva">1</div>
             </div>

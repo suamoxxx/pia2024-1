@@ -25,7 +25,7 @@
         height: 43px;
         border-radius: 5px;
         font-size: 22px;
-        font-family: Bradley Hand ITC;
+        font-family: 'Lucida Sans';
         text-align: center;
         justify-content: center;
         align-items: center;
@@ -61,8 +61,8 @@
 }
 #zntsk  {
     width: 90%;
-    height: 580px;
-    background-color: #F3F5F8;
+    height: 690px;
+    background-color: #f48563;
     box-shadow: -2px -3px 73px 6px rgba(0,0,0,0.67);
     border-radius: 13px;
     display: inline-flex;
@@ -74,15 +74,17 @@
 }
 #znchtask{
     width: 30%;
-    height: 395px;
+    height: 450px;
     position: relative;
     left: 5%;
     top: 8%;
     margin: 5px;
+    border: 3px solid whitesmoke;
+    border-radius: 5px;
 }
 #znte  {
     width: 90%;
-    height: 600px;
+    height: 690px;
     background-color: #F3F5F8;
     box-shadow: -2px -3px 73px 6px rgba(0,0,0,0.67);
     border-radius: 13px ;
@@ -120,9 +122,12 @@ input,textarea {
 }
 input::placeholder{
     color: #f48563;
+    font-weight: lighter;
+
 }
 textarea::placeholder{
     color: #f48563;
+    font-weight: lighter;
 }
 #elf {
     width: 95px;
@@ -141,9 +146,9 @@ ul {
     width: 65px;
     height: 40px;
     border-radius: 3px;
-    font-family: Chiller;
+    font-family: 'Lucida Sans';
     background-color: #f48563;
-    font-size: 35px;
+    font-size: 20px;
     position: relative;
     bottom: 85px;
     display: flex;
@@ -248,7 +253,7 @@ p {
 #logo {
     display: flex;
     position: relative;
-    left: 400px;
+    left: 300px;
     bottom: 150px;
     width: 250px;
 }
@@ -260,11 +265,11 @@ p {
     margin-right: 20px;
 }
 .main { 
-    height: 2600px;
-    background-color: #CFD8DC;
+    height: 2900px;
+    background-color: #B0BEC5;
 }
 #taskUI {
-    border:1px solid #f48563;
+    background-color: white;
     margin: 5px;
     border-radius: 3px;
     font-weight: bold;
@@ -272,6 +277,7 @@ p {
     height: 45px;
     align-content: center;
     padding: 2px;
+    color: #f48563;
 }
 #clip {
     width: 80px;
@@ -283,6 +289,8 @@ p {
 #txt-nav {
     position: relative;
     right: 95px;
+    font-family: 'Lucida Sans';
+    font-size: 20px;
 } 
 #clip2 {
     width: 80px;
@@ -323,14 +331,20 @@ p {
     position: relative;
     display: flex;
     margin: auto;
-    bottom: 50px;
+    bottom: 50px;   
+    background-color: whitesmoke;
+    border: 1px  solid #f48563;
+    color: #f48563;
 }
 .linea {
-    border: 1px solid #f48563;
+    background-color: whitesmoke;
     width: 300px;
     height: 200px;
     position: relative;
-    left: 12%;
+    left: 18%;
+    border-radius: 5px;
+    padding: 5px;
+    bottom: 25%;
 }
 .bt-main {
     background-color: #F3F5F8;
@@ -340,8 +354,9 @@ p {
     position: relative;
     right: 30px;
 }
-.bt-main:hover {
+#bt-main:hover {
     background-color: #f48563;
+    color: whitesmoke;
 }
 #img-task {
     width: 30px;
@@ -376,25 +391,33 @@ p {
     right: 11%;
     animation: delisiocin 0.8s linear infinite;
 }
+#up-nts {
+    width: 10%;
+    height: 10%;
+    position: relative;
+    right: 11%;
+    top: 10px;
+    animation: delisiocin 0.8s linear infinite;   
+}
 #down {
     width: 10%;
     height: 10%;
     position: relative;
-    left: 1060px;
-    top: 60px;
+    left: 1055px;
+    top: 40px;
     animation: delisiocin 0.8s linear infinite;
 }
 .tareastxt {
-    position: relative;
-    left: 34%;
-    font-family: chiller;
-    color: #f48563  ;
-    font-size: 30px;
-    border-left: 1px solid #f48563;
-    padding: 8px;
-    border-right: 1px solid #f48563;
-    width: 60px;
+    font-family: 'Lucida Sans';
+    color: #f48563 ;
+    background-color: whitesmoke;
+    font-size: 20px;
     font-weight: lighter;
+    text-align: center;
+    border-radius: 5px;
+}
+#clip4 {
+    position: relative;
 }
 @keyframes delisiocin {
     0% {
@@ -426,27 +449,50 @@ p {
     padding: 2px;
     border-radius: 6%;
     position: relative;
-    right: 80px;
+    right: 65px;
+    height: 36px;
     display: none;
   }
-  #txt-note, #txt-task {
+
+  #txt-note {
     position: relative;
-    font-family:chiller;
     color: #f48563;
     font-size: 35px;
-    position: relative;
     left: 70px;
-    border-left: 1px solid #f48563;
-    border-right: 1px solid #f48563;
     padding: 5px;
     width: 200px;
     font-weight: lighter;
+  }
+  #txt-task {
+    color: #f48563;
+    font-family: 'Lucida Sans';
+    font-size: 19px;
+    background-color: whitesmoke;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-weight: lighter;
+
   }
 #nts {
     border: 1px solid #f48563;
     margin: 8px;
     border-radius: 10px;
     padding: 5px;
+}
+.mn-bd {
+    border: 3px solid whitesmoke;
+    border-radius: 8px;
+
+/*aqui va el overflow*/}
+.text-task {
+    color: #f48563;
+    font-size: 17px;
+    margin: auto;
+    background-color: whitesmoke;
+    position: relative;
+    justify-content: center;
+    font-family: 'Lucida Sans';
 }
 @media only screen and (max-width: 1080px) {
 #logo {
@@ -471,10 +517,7 @@ p {
 #txt-note {
     font-size: 18px;
 }
-.main { 
-    height: 3200px;
-    z-index: 1;
-}
+
 #znte{
     height: 1000px;
 }

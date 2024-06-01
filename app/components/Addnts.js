@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 import '/app/app.css';
 import del from '../images/del.png';
 import editar from '../images/editar.png';
-import down from "../images/down.png";
 import up from "../images/up.png";
+
     function Addnts(){
         const [description, setDescription] = useState('');
         const [data, setData ] = useState([]);     
@@ -17,9 +17,21 @@ import up from "../images/up.png";
             .then(data => console.log(data))
             .catch(error => console.error(error));
         } 
-          
+        window.location.reload(true)
         }    
-       const update =  useEffect(()=>{
+        const upTask = (id) => {
+            fetch(`/api/task/search/${id}/`, {})
+            .then(res => res.json())
+            .then(data => {
+                setData(data)
+
+                 let inpDes = document.getElementById('description')
+                 let descripcion =  data.description;
+                inp.value = prioridad;
+                inpDes.value = descripcion;
+                        
+            })
+       useEffect(()=>{
             fetch('http://127.0.0.1:3001/api/task/notas')
             .then(res =>res.json())
             .then(data => {
@@ -39,10 +51,18 @@ import up from "../images/up.png";
                 body: JSON.stringify(descripcions)
             })
                 setDescription('')
+                document.getElementById("output").style.display="inline";
+                const style = {
+                    display: "none"
+                }
+                    let change = () => {
+                        return document.getElementById("output").style;    
+                    }
+                    setInterval(change, 600)
         }    
         return (
             <div>
-                <a id="clip4" href="#clip"><img id="up" src={up}/></a>  
+                <a id="clip4" href="#clip"><img id="up-nts" src={up}/></a>  
                 <div>
                     <form onSubmit={handleSubmit} className="formNts">
                        <button className="btn_nts">&#43;</button>
@@ -75,7 +95,9 @@ import up from "../images/up.png";
                                     )})
                                    }             
                 </div>
+                <span id="output">SAVE</span>
             </div>
         );
     }
-export default Addnts;
+}
+export default Addnts

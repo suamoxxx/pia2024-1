@@ -8,12 +8,19 @@ function Task({task}) {
     const [data, setData ] = useState([]); 
     const prioridad = add.setPriority;
     const descrip = add.SetDescriptions;
+
     const upTask = (id) => {
             fetch(`/api/task/search/${id}/`, {})
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                priority: prioridad
+                setData(data)
+                 let inp = document.getElementById('priority')
+                 let inpDes = document.getElementById('description')
+                 let prioridad = data.priority;
+                 let descripcion =  data.description;
+                inp.value = prioridad;
+                inpDes.value = descripcion;
+                        
             })
         
     }

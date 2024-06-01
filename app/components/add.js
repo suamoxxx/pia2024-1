@@ -26,9 +26,10 @@ import up from "../images/up.png";
             //Detenemos el evento por defecto del navegador  
                 e.preventDefault();
             //Pasamos los datos del estado a un objeto
+
                 const task = {
                     priority: priority,
-                    description: description
+                    description: description,
                 }
                 //Enviamos datos a la api rest para que los guarde
                 fetch('http://localhost:3001/api/task', {
@@ -38,19 +39,11 @@ import up from "../images/up.png";
                 }).then(res => res.json()).then(data =>{
                     setDescriptions('');
                     setPriority('');
-                    document.getElementById("output").style.display="inline";
-                    let change = () => {
-                        return document.getElementById("output").style.display="none"
-                        
-                    }
-                    setInterval(change, 500)
-                    setInterval(window.location.reload(true),900)
-                })
-                
-            
+                    window.location.reload(true)
+                    
+                    
+                })   
         }
-        
-          
         return (
             <div >           
                 <a id="clip4" href="#nav"><img id="up" src={up}/></a>      
@@ -85,7 +78,7 @@ import up from "../images/up.png";
                 </div>
 
                 <div className="table">
-                                    <h1 className="tareastxt">Tareas</h1>
+                                    <h1 className="tareastxt">Tus tareas</h1>
                                             {
                                    data.map(tsk =>{                         
                                     return(
@@ -93,7 +86,7 @@ import up from "../images/up.png";
                                     )})
                                    }
                 </div>
-                <span id="output">SAVE</span>
+                
                 <a  href="#clip2"><img id="down" src={down}/></a>                                          
             </div>
         );
