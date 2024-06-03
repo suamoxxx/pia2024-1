@@ -4,13 +4,13 @@ const morgan = require('morgan');
 const app = express();
 const path = require('path');
 //Importamos la conexion a la DB
-const { mongo } = require('./database.js');
+const { mongoose } = require('./database.js');
 const Task = require('./models/task.js');
 const Note = require('./models/note.js');
 const cors = require('cors');
-var corsOptions = {
+const corsOptions = {
     origin: 'http://127.0.0.1:3001',
-    optionsSuccessStatus: 200 // For legacy browser support
+    optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
 //Establecemos el puerto 3001 a traves de set
@@ -25,6 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/task',require('./routes.js'))
  //Imprime estado del servidor, obteniedo el valor con get
 app.listen(app.get('port'), ()=>{
-         console.log(`Server running in port ${app.get('port')}`);
+         console.log(`Server running on port ${app.get('port')}`);
 });
 

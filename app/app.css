@@ -18,8 +18,7 @@
         padding: 8px;
     }
     button {
-        background-color: #f48563;
-        color: azure;
+        color: #f48563;
         border-style: none;
         width: 58px;
         height: 43px;
@@ -34,7 +33,7 @@
         background-color: #CFD8DC;
         border: 1px solid salmon;
         animation: btnMove 0.8s linear infinite;
-        color: #f48563;
+        color: whitesmoke;
     }
 @keyframes btnMove {
         0% {
@@ -76,8 +75,7 @@
     width: 30%;
     height: 450px;
     position: relative;
-    left: 5%;
-    top: 8%;
+    bottom:5px ;
     margin: 5px;
     border: 3px solid whitesmoke;
     border-radius: 5px;
@@ -85,7 +83,7 @@
 #znte  {
     width: 90%;
     height: 690px;
-    background-color: #F3F5F8;
+    background-color: #f48563;
     box-shadow: -2px -3px 73px 6px rgba(0,0,0,0.67);
     border-radius: 13px ;
     display: inline-flex;
@@ -103,10 +101,13 @@
 }
 #znchnts{
     width: 350px;
-    height: 395px;
-    background-color: #F3F5F8;
+    height: 450px;
     position: relative;
-    left: 13%;
+    left: 20%;
+    top: 10px;
+    border-radius: 8px;
+    background-color: #f48563;
+    border: 3px solid whitesmoke;
 }
 input,textarea { 
     border: 0;
@@ -141,7 +142,7 @@ ul {
 }
 .btn-nav {
     border: 0;
-    border: 1px solid whitesmoke;
+    border: 2px solid whitesmoke;
     margin: 5px;
     width: 65px;
     height: 40px;
@@ -152,9 +153,11 @@ ul {
     position: relative;
     bottom: 85px;
     display: flex;
+    color: whitesmoke;
 }
 .btn-nav:hover {
     background-color: whitesmoke;
+    color: #f48563;
 }
 a:visited {
     color:whitesmoke;
@@ -176,7 +179,13 @@ a:hover {
     position: relative;
     left: 165px;
     display: flex;
-    top: 61px;
+    top: 50px;
+    border: 1px solid #f48563;
+    background-color: whitesmoke;
+}
+.btn_nts:hover{
+    background-color: #f48563;
+    color: whitesmoke;
 }
 footer {
     width: 100%;
@@ -194,18 +203,7 @@ input {
 }
 .input_style_descriptions {
     font-size: 14px;
-    width: 400px;
-}
-.notie-container {
-    text-align: center;
-    width: 10%;
-    border-radius: 8px;
-    border: 3px solid salmon;
-    color: salmon;
-    position: relative;
-    bottom: 500px;
-    display: flex;
-    text-align: center;
+    width: 350px;
 }
 #elf1 {
     width: 60px;   
@@ -266,7 +264,7 @@ p {
 }
 .main { 
     height: 2900px;
-    background-color: #B0BEC5;
+
 }
 #taskUI {
     background-color: white;
@@ -278,6 +276,7 @@ p {
     align-content: center;
     padding: 2px;
     color: #f48563;
+    margin-left: 55px;
 }
 #clip {
     width: 80px;
@@ -415,6 +414,8 @@ p {
     font-weight: lighter;
     text-align: center;
     border-radius: 5px;
+    text-transform: uppercase;
+    width: 500px;
 }
 #clip4 {
     position: relative;
@@ -440,11 +441,17 @@ p {
     }
   }
   .formNts {
-    border: 1px solid #f48563;
-  }
+    background-color: whitesmoke;
+    width: 400px;
+    position: relative;
+    bottom: 80px;
+    margin-left: 50px;
+    border-radius: 8px;
+    height: 100px;
+}
   #output {
-    background-color: #f48563;
-    color: #CFD8DC;
+    background-color: whitesmoke;
+    color: #f48563;
     font-size: 20px;
     padding: 2px;
     border-radius: 6%;
@@ -453,15 +460,14 @@ p {
     height: 36px;
     display: none;
   }
-
   #txt-note {
     position: relative;
     color: #f48563;
-    font-size: 35px;
-    left: 70px;
-    padding: 5px;
-    width: 200px;
+    background-color: whitesmoke;
+    font-size: 20px;
+    width: 100%;
     font-weight: lighter;
+    text-align: center;
   }
   #txt-task {
     color: #f48563;
@@ -472,10 +478,10 @@ p {
     position: relative;
     text-align: center;
     font-weight: lighter;
-
   }
 #nts {
-    border: 1px solid #f48563;
+    background-color: whitesmoke;
+    color: #f48563;
     margin: 8px;
     border-radius: 10px;
     padding: 5px;
@@ -494,6 +500,28 @@ p {
     justify-content: center;
     font-family: 'Lucida Sans';
 }
+.text-nts {
+    position: relative;
+    margin-bottom: 22px;
+    background-color: whitesmoke;
+    color: #f48563;
+    font-family: 'Lucida Sans';
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+    bottom: 75px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+
+}
+.container-nts {
+    border: 3px solid whitesmoke;
+    border-radius: 8px;
+    height: 666px;
+    position: relative;
+    top: 10px;
+} 
 @media only screen and (max-width: 1080px) {
 #logo {
     display: none;
