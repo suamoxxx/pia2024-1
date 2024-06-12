@@ -368,9 +368,9 @@ p {
     margin: auto;
 }
 .table {
-    font-size: 14px;
+    font-size: 12px;
     padding: 4px;
-    font-family: calibri;
+    font-family: 'Lucida Sans';
 }
 .btn-del {
     width: 40px;
@@ -449,16 +449,30 @@ p {
     border-radius: 8px;
     height: 100px;
 }
-  #output {
+  .output {
     background-color: whitesmoke;
     color: #f48563;
-    font-size: 20px;
+    font-size: 17px;
+    padding: 2px;
+    border-radius: 6%;
+    position: relative;
+    bottom: 250px;
+    height: 36px;
+    left: 200px;
+    font-family: 'Lucida Sans';
+display:none;
+  }
+.show {
+    background-color: whitesmoke;
+    color: #f48563;
+    font-size: 18px;
     padding: 2px;
     border-radius: 6%;
     position: relative;
     right: 65px;
     height: 36px;
-    display: none;
+    font-family: 'Lucida Sans';
+    display: relative;
   }
   #txt-note {
     position: relative;
@@ -489,7 +503,6 @@ p {
 .mn-bd {
     border: 3px solid whitesmoke;
     border-radius: 8px;
-
 /*aqui va el overflow*/}
 .text-task {
     color: #f48563;
@@ -512,8 +525,6 @@ p {
     bottom: 75px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-
-
 }
 .container-nts {
     border: 3px solid whitesmoke;
@@ -545,7 +556,6 @@ p {
 #txt-note {
     font-size: 18px;
 }
-
 #znte{
     height: 1000px;
 }

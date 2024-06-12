@@ -18,11 +18,9 @@ function Task({task}) {
                  let inpDes = document.getElementById('description')
                  let prioridad = data.priority;
                  let descripcion =  data.description;
-                inp.value = prioridad;
-                inpDes.value = descripcion;
-                        
+                 inp.value = prioridad;
+                 inpDes.value = descripcion;       
             })
-        
     }
     const delTas = (id) => {
         if(confirm("Realmente deseas eliminarla")){
@@ -33,7 +31,13 @@ function Task({task}) {
             .then(resp => resp.json())
             .then(data => console.log(data))
             .catch(error => console.error(error));
-            window.location.reload(true)
+            
+            
+
+
+
+
+            
         }      
       }
     return(

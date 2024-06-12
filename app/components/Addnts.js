@@ -20,7 +20,6 @@ function Addnts() {
         } 
         window.location.reload(true);
     };
-
     const upTask = (id) => {
         fetch(`/api/task/search/${id}/`)
         .then(res => res.json())
@@ -51,17 +50,12 @@ function Addnts() {
             headers: { "Content-type": "application/json", "Accept": "application/json" },
             body: JSON.stringify(descripcions)
         });
+        document.getElementById('output').classList.add('show');
         setDescription('');
-        document.getElementById("output").style.display = "inline";
-        const style = {
-            display: "none"
-        };
-
-        let change = () => {
-            return document.getElementById("output").style;
-        };
-
-        setInterval(change, 600);
+        
+        setTimeout(function(){
+            window.location.reload(true)
+        }, 3000);
     };
 
     return (
@@ -100,7 +94,7 @@ function Addnts() {
                     })
                 }
             </div>
-            <span id="output">SAVE</span>
+            <span id="output" className="output">Guardado</span>
         </div>
     );
 }

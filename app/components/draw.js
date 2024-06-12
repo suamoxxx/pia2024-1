@@ -11,13 +11,13 @@ function Charts (){
     const middle = tasks.filter(task => task.priority.includes(two)).length *10;
     const three = 'Baja'
     const low = tasks.filter(task => task.priority.includes(three)).length *10;
-    console.log(high,middle,low)
     const data = {
         labels: [ 'Alta','Media','Baja'],
         datasets: [{
                     label: "Tareas por prioridad",
                     data: [ high, middle,low],
-                    backgroundColor: ['red','yellow','green'],
+                    //Alta Media Baja
+                    backgroundColor: ['#F46D6D','#E8F46D','#97E068'],
                 }]
     };     
     useEffect(()=>{
