@@ -26,7 +26,6 @@ import up from "../images/up.png";
             //Detenemos el evento por defecto del navegador  
                 e.preventDefault();
             //Pasamos los datos del estado a un objeto
-
                 const task = {
                     priority: priority,
                     description: description,

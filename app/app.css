@@ -55,6 +55,16 @@
                 transform: translate(0);
         }
 }
+#curva {
+        height: 80px;
+        width: 2400px;
+        background-color: #f48563;
+        clip-path: path('M0,64L40,42.7C80,21,160,1,240,24C320,47,400,55,480,39.3C560,31,640,19,720,10.7C800,3,880,15,960,29.3C1040,47,1120,57,1200,36C1280,15,1360,21,1400,34.7L1440,64L1440,192L1400,192C1360,192,1280,192,1200,192C1120,192,1040,192,960,192C880,192,800,192,720,192C640,192,560,192,480,192C400,192,320,192,240,192C160,192,80,192,40,192L0,192Z');
+        transform: rotate(3.142rad);
+        position: relative;
+        right: 970px;
+        bottom: 66px;
+}
 #del {
     width: 50px;
 }
@@ -298,16 +308,7 @@ p {
     left: 49%;
     bottom: 50px;
 }
-#curva {
-    height: 80px;
-    width: 2400px;
-    background-color: #f48563;
-    clip-path: path('M0,64L40,42.7C80,21,160,1,240,24C320,47,400,55,480,39.3C560,31,640,19,720,10.7C800,3,880,15,960,29.3C1040,47,1120,57,1200,36C1280,15,1360,21,1400,34.7L1440,64L1440,192L1400,192C1360,192,1280,192,1200,192C1120,192,1040,192,960,192C880,192,800,192,720,192C640,192,560,192,480,192C400,192,320,192,240,192C160,192,80,192,40,192L0,192Z');
-    transform: rotate(3.142rad);
-    position: relative;
-    right: 970px;
-    bottom: 66px;
-}
+
 #curva-pie {
     height: 68px;
     width: 1500px;
@@ -335,24 +336,6 @@ p {
     border: 1px  solid #f48563;
     color: #f48563;
 }
-.linea {
-    background-color: whitesmoke;
-    width: 300px;
-    height: 200px;
-    position: relative;
-    left: 18%;
-    border-radius: 5px;
-    padding: 5px;
-    bottom: 25%;
-}
-.bt-main {
-    background-color: #F3F5F8;
-    border: 2px solid salmon;
-    display: flex;
-    height: 60px;
-    position: relative;
-    right: 30px;
-}
 #bt-main:hover {
     background-color: #f48563;
     color: whitesmoke;
@@ -367,22 +350,6 @@ p {
     height: 30px;
     margin: auto;
 }
-.table {
-    font-size: 12px;
-    padding: 4px;
-    font-family: 'Lucida Sans';
-}
-.btn-del {
-    width: 40px;
-    height: 40px;
-}
-.btn-del:hover {
-    border: 0;
-}
-.btn-edit {
-    width: 38px;
-    height: 38px;
-} 
 #up {
     width: 10%;
     height: 10%;
@@ -406,6 +373,35 @@ p {
     top: 40px;
     animation: delisiocin 0.8s linear infinite;
 }
+#txt-note {
+    position: relative;
+    color: #f48563;
+    background-color: whitesmoke;
+    font-size: 20px;
+    width: 100%;
+    font-weight: lighter;
+    text-align: center;
+  }
+  #txt-task {
+    color: #f48563;
+    font-family: 'Lucida Sans';
+    font-size: 19px;
+    background-color: whitesmoke;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-weight: lighter;
+  }
+#nts {
+    background-color: whitesmoke;
+    color: #f48563;
+    margin: 8px;
+    border-radius: 10px;
+    padding: 5px;
+}
+#clip4 {
+    position: relative;
+}
 .tareastxt {
     font-family: 'Lucida Sans';
     color: #f48563 ;
@@ -417,9 +413,42 @@ p {
     text-transform: uppercase;
     width: 500px;
 }
-#clip4 {
+.linea {
+    background-color: whitesmoke;
+    width: 300px;
+    height: 200px;
     position: relative;
+    left: 18%;
+    border-radius: 5px;
+    padding: 5px;
+    bottom: 25%;
 }
+.bt-main {
+    background-color: #F3F5F8;
+    border: 2px solid salmon;
+    display: flex;
+    height: 60px;
+    position: relative;
+    right: 30px;
+}
+
+.table {
+    font-size: 12px;
+    padding: 4px;
+    font-family: 'Lucida Sans';
+}
+.btn-del {
+    width: 40px;
+    height: 40px;
+}
+.btn-del:hover {
+    border: 0;
+}
+.btn-edit {
+    width: 38px;
+    height: 38px;
+} 
+
 @keyframes delisiocin {
     0% {
               transform: translate(0);
@@ -474,32 +503,7 @@ display:none;
     font-family: 'Lucida Sans';
     display: relative;
   }
-  #txt-note {
-    position: relative;
-    color: #f48563;
-    background-color: whitesmoke;
-    font-size: 20px;
-    width: 100%;
-    font-weight: lighter;
-    text-align: center;
-  }
-  #txt-task {
-    color: #f48563;
-    font-family: 'Lucida Sans';
-    font-size: 19px;
-    background-color: whitesmoke;
-    width: 100%;
-    position: relative;
-    text-align: center;
-    font-weight: lighter;
-  }
-#nts {
-    background-color: whitesmoke;
-    color: #f48563;
-    margin: 8px;
-    border-radius: 10px;
-    padding: 5px;
-}
+ 
 .mn-bd {
     border: 3px solid whitesmoke;
     border-radius: 8px;
